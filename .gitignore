@@ -5,4 +5,5 @@
 *.pyc
 bubble
 insertion
+select
 *-main.*
