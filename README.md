@@ -25,15 +25,15 @@ General
 - How to select the best sorting algorithm for a given input
 - What is a stable sorting algorithm
 
-Copyright - Plagiarism
+### Copyright - Plagiarism
 
 - You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
 - You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
 - You are not allowed to publish any content of this project.
 - Any form of plagiarism is strictly forbidden and will result in removal from the program.
 
-Requirements
-General
+### Requirements
+### General
 
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -127,15 +127,15 @@ typedef struct listint_s
 } listint_t;
 ```
 Please, note this format is used for Quiz and Task questions.
-``
-    O(1)
-    O(n)
-    O(n!)
-    n square -> O(n^2)
-    log(n) -> O(log(n))
-    n * log(n) -> O(nlog(n))
-    n + k -> O(n+k)
-    …
+```
+O(1)
+O(n)
+O(n!)
+n square -> O(n^2)
+log(n) -> O(log(n))
+n * log(n) -> O(nlog(n))
+n + k -> O(n+k)
+…
 ```
 Please use the “short” notation (don’t use constants). Example: O(nk) or O(wn) should be written O(n). If an answer is required within a file, all your answers files must have a newline at the end.
 Tests
