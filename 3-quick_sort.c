@@ -22,19 +22,22 @@ size_t partition(int **array, size_t low, size_t high, size_t size)
 	i = low - 1;
 	for (j = low; j < high; j++)
 	{
-		if (pivot >= (*array)[j])
+		if ((*array)[j] <= pivot)
 		{
 			i++;
 			temp = (*array)[i];
 			(*array)[i] = (*array)[j];
 			(*array)[j] = temp;
+			if ((*array)[i] !=  (*array)[j])
+				print_array(*array, size);
 		}
 	}
 
 	temp =  (*array)[i + 1];
 	(*array)[i + 1] = (*array)[high];
 	(*array)[high] = temp;
-	print_array(*array, size);
+	if ((*array)[i + 1] !=  (*array)[high])
+		print_array(*array, size);
 	return (i + 1);
 }
 
@@ -60,7 +63,8 @@ void qS(int **array, size_t low, size_t high, size_t size)
 
 		if (pi != 0)
 			qS(array, low, (pi - 1), size);
-		qS(array, (pi + 1), high, size);
+		if (pi < size - 1)
+			qS(array, (pi + 1), high, size);
 	}
 }
 
