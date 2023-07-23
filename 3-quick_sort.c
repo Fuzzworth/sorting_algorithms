@@ -81,5 +81,6 @@ void qS(int **array, size_t low, size_t high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	qS(&array, 0, (size - 1), size);
+	if (size > 1)
+		qS(&array, 0, (size - 1), size);
 }
