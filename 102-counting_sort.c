@@ -40,7 +40,6 @@ void counting_sort(int *array, size_t size)
 		free(count_array);
 		return;
 	}
-
 	for (j = size - 1; j >= 0; j--)
 	{
 		i = count_array[array[j]];
@@ -50,7 +49,6 @@ void counting_sort(int *array, size_t size)
 
 	for (i = 0; i < size; i++)
 		array[i] = sorted_array[i];
-
 	free(count_array);
 	free(sorted_array);
 }
