@@ -8,5 +8,6 @@ insertion
 select
 shell
 counting
+heap
 quick
 *-main.*
