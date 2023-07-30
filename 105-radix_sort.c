@@ -4,7 +4,7 @@
  * getMax - get maximum
  *
  * @array: array
- * @n: n
+ * @size: n
  *
  * Return: max
  */
