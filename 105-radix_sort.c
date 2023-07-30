@@ -23,47 +23,35 @@ int getMax(int *array, size_t size)
 /**
  * countingSort - get maximum
  *
- * @array: array
- * @size: size
+ * @arr: array
+ * @n: size
  * @place: place
  *
  * Return: void
  */
-void countingSort(int *array, size_t size, int place)
+void countingSort(int *arr, size_t n, int place)
 {
-	int *output, *count, max, j;
-	size_t i;
+	int *output, i, count[10] = { 0 };
+	size_t j;
 
-	max = (array[0] / place) % 10;
-	output = malloc(sizeof(int) * (size + 1));
+	output = malloc(sizeof(int) * n);
 	if (output == NULL)
 		return;
-	for (i = 1; i < size; i++)
-	{
-		if (((array[i] / place) % 10) > max)
-			max = array[i];
-	}
-	count = malloc(sizeof(int) * (max + 1));
-	if (count == NULL)
-		return;
-	for (j = 0; j < max; ++j)
-		count[i] = 0;
-	for (i = 0; i < size; i++)
-		count[(array[i] / place) % 10]++;
+	for (j = 0; j < n; j++)
+		count[(arr[j] / place) % 10]++;
+
 	for (i = 1; i < 10; i++)
 		count[i] += count[i - 1];
-	for (i = 0; i < size; i++)
+
+	for (j = 0; j < n; j++)
 	{
-		output[count[(array[size - i - 1] / place) % 10] - 1] = array[size - 1 - i];
-		count[(array[size - 1 - i] / place) % 10]--;
+		output[count[(arr[n - 1 - j] / place) % 10] - 1] = arr[n - 1 - j];
+		count[(arr[n - 1 - j] / place) % 10]--;
 	}
-	for (i = 0; i < size; i++)
-		array[i] = output[i];
-	print_array(array, size);
+	for (j = 0; j < n; j++)
+		arr[j] = output[j];
 	free(output);
-	free(count);
-	count = NULL;
-	output = NULL;
+	print_array(arr, n);
 }
 
 /**
@@ -81,7 +69,7 @@ void radix_sort(int *array, size_t size)
 	{
 		max = getMax(array, size);
 
-		for (place = 1; max / place > 0; place *= 10)
+		for (place = 1; (max / place) > 0; place *= 10)
 		{
 			countingSort(array, size, place);
 		}
